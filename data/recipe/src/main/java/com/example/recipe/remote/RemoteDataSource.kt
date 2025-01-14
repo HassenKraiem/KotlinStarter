@@ -1,17 +1,9 @@
 package com.example.recipe.remote
 
 import com.example.recipe.model.RecipeDto
-import domain.auth.model.User
 import io.ktor.client.HttpClient
-import io.ktor.client.call.body
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
-import io.ktor.client.request.post
-import io.ktor.client.request.setBody
-import io.ktor.client.statement.HttpResponse
-import io.ktor.http.ContentType
-import io.ktor.http.contentType
-import network.data.TokenSettings
 import network.di.NO_AUTH
 import network.helper.handleErrors
 import org.koin.core.annotation.Named

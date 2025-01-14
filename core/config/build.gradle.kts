@@ -69,11 +69,18 @@ fun TargetConfigDsl.setFlavorConfig(
             ?: properties.getProperty("ESSNTL_BASE_URL_$flavorString")
             ?: "https://be.essntl.app",
     )
+
+    buildConfigField(
+        FieldSpec.Type.STRING,
+        "baseUrl",
+        System.getenv("BASE_URL_$flavorString")
+            ?: properties.getProperty("BASE_URL_$flavorString")
+            ?: "",
+    )
 }
 
 enum class BuildFlavor {
     Dev,
     Staging,
     Release,
-    Demo,
 }

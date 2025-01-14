@@ -1,8 +1,8 @@
 package com.example.recipe.mapper
 
-import com.example.recipe.model.Recipe
-import com.example.recipe.model.RecipeDetails
+import domain.recipe.model.Recipe
 import com.example.recipe.model.RecipeDto
+import domain.recipe.details.model.RecipeDetails
 
 fun List<RecipeDto>.toDomain(): List<Recipe> = map {
     Recipe(

@@ -1,8 +1,8 @@
 plugins {
     id("compose.mp")
     alias(libs.plugins.kotlinx.serialization)
+    alias(libs.plugins.ksp)
 }
-
 kotlin {
     sourceSets.commonMain.dependencies {
         with(libs.kotlinx) {

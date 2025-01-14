@@ -43,6 +43,12 @@ suspend fun <T> getDataSuspend(
 
         yield()
 
+        // data = xyz
+
+        // start call
+        // println data = xyz; is loading = true
+        // get data success abc
+        // println data = abc; is success = true
         setState(State.loading(getState().data))
 
         yield()

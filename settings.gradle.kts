@@ -58,13 +58,11 @@ include(
     ":data:auth_data",
     ":data:user_data",
     ":data:recipe_data",
-    ":data:recipe_response_data"
 )
 
 project(":data:auth_data").projectDir = file("data/auth")
 project(":data:user_data").projectDir = file("data/user")
 project(":data:recipe_data").projectDir = file("data/recipe")
-project(":data:recipe_response_data").projectDir = file("data/recipe_response")
 
 // Domain module
 include(
@@ -85,8 +83,12 @@ project(":domain:recipe_details_domain").projectDir = file("domain/recipe_detail
 include(
     ":ui:auth_ui",
     ":ui:user_ui",
+    ":ui:details_ui",
+    ":ui:recipe_list_ui"
 )
 
 project(":ui:auth_ui").projectDir = file("ui/auth")
 project(":ui:user_ui").projectDir = file("ui/user")
+project(":ui:details_ui").projectDir = file("ui/details")
+project(":ui:recipe_list_ui").projectDir = file("ui/recipe_list")
 

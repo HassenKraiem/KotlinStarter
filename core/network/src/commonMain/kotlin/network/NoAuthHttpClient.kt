@@ -1,5 +1,6 @@
 package network
 
+import com.softylines.config.BuildConfig
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.defaultRequest
@@ -16,7 +17,7 @@ import network.util.NetworkConstants
 internal fun createNoAuthHttpClient(): HttpClient =
     createPlatformHttpClient().config {
         defaultRequest {
-            url(NetworkConstants.BASE_URL)
+            url(BuildConfig.baseUrl)
             contentType(ContentType.Application.Json)
         }
 

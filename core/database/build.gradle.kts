@@ -55,5 +55,6 @@ dependencies {
 }
 
 room {
+    println("project dir $projectDir")
     schemaDirectory("$projectDir/schemas")
 }
