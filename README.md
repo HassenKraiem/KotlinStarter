@@ -57,4 +57,4 @@ For adding new feature modules, we will follow these guidelines:
 
 Run `./gradlew detekt` to run detekt checks.
 
-You can also run `./gradlew detekt --auto-correct` to auto correct some issues automatically.
+You can also run `./gradlew detekt --auto-correct` to auto correct some issues automatically.# KotlinStarter
