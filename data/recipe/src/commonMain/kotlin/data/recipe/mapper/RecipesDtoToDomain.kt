@@ -1,7 +1,7 @@
-package com.example.recipe.mapper
+package data.recipe.mapper
 
 import domain.recipe.model.Recipe
-import com.example.recipe.model.RecipeDto
+import data.recipe.model.RecipeDto
 import domain.recipe.details.model.RecipeDetails
 
 fun List<RecipeDto>.toDomain(): List<Recipe> = map {

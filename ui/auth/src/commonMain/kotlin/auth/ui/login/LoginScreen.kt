@@ -21,7 +21,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import auth.ui.navigation.AuthNavigation
+import utils.navigation.AuthNavigation
 
 @Composable
 fun LoginScreen(

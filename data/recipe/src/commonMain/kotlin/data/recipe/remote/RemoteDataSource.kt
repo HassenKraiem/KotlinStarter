@@ -1,6 +1,6 @@
-package com.example.recipe.remote
+package data.recipe.remote
 
-import com.example.recipe.model.RecipeDto
+import data.recipe.model.RecipeDto
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import io.ktor.client.request.parameter
@@ -23,7 +23,7 @@ class RemoteDataSource(
 
 
     }
-    suspend fun getRecipeDetails(id:String):  RecipeDto {
+    suspend fun getRecipeDetails(id:String): RecipeDto {
        return handleErrors<RecipeDto> {
            noAuthClient.get("api/json/v1/1/lookup.php") {
                parameter("i", id)

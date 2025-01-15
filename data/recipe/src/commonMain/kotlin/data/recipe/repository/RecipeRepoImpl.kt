@@ -1,8 +1,8 @@
-package com.example.recipe.repository
+package data.recipe.repository
 
-import com.example.recipe.mapper.toDomain
+import data.recipe.mapper.toDomain
 import domain.recipe.model.Recipe
-import com.example.recipe.remote.RemoteDataSource
+import data.recipe.remote.RemoteDataSource
 import domain.recipe.repository.RecipeRepository
 import org.koin.core.annotation.Single
 

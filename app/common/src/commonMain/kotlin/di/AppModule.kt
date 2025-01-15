@@ -1,6 +1,8 @@
 package di
 
+
 import data.auth.di.DataAuthModule
+import data.recipe.di.DataRecipeModule
 import data.user.di.DataUserModule
 import database.di.databaseModule
 import navigation.auth.authModule
@@ -27,6 +29,7 @@ val appModules =
         // Data
         DataAuthModule.module,
         DataUserModule.module,
+        DataRecipeModule.module,
 
         // Domain (Use cases)
 
