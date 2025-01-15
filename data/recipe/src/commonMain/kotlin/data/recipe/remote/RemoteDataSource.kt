@@ -1,5 +1,7 @@
 package data.recipe.remote
 
+import data.recipe.model.MealDTO
+import data.recipe.model.RecipeDTOX
 import data.recipe.model.RecipeDto
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
@@ -14,8 +16,8 @@ import org.koin.core.annotation.Single
 class RemoteDataSource(
     @Named(NO_AUTH) private val noAuthClient: HttpClient,
 ) {
-    suspend fun getRecipes(searchQuery:String): List<RecipeDto> {
-        return handleErrors<List<RecipeDto>> {
+    suspend fun getRecipes(searchQuery:String): RecipeDTOX {
+        return handleErrors<RecipeDTOX> {
             noAuthClient.get("api/json/v1/1/search.php") {
                 parameter("s", searchQuery)
             }
@@ -23,8 +25,8 @@ class RemoteDataSource(
 
 
     }
-    suspend fun getRecipeDetails(id:String): RecipeDto {
-       return handleErrors<RecipeDto> {
+    suspend fun getRecipeDetails(id:String): RecipeDTOX {
+       return handleErrors<RecipeDTOX> {
            noAuthClient.get("api/json/v1/1/lookup.php") {
                parameter("i", id)
            }

@@ -1,6 +1,6 @@
 package domain.recipe.model
 
-data class Recipe(
+data class Meal(
     val idMeal: String,
     val strMeal: String,
     val strArea: String,

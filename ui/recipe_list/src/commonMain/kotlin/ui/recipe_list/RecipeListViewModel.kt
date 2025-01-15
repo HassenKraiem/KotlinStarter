@@ -24,8 +24,8 @@ class RecipeListViewModel(
     fun search(q: String) =
         getData(
             getData = { repository.getRecipes(searchQuery = q) },
-            getState = { state.value.recipe },
-            setState = { newState -> state.update { it.copy(recipe = newState) } },
+            getState = { state.value.meal },
+            setState = { newState -> state.update { it.copy(meal = newState) } },
             onFailure = { exception ->
                 state.value =
                     state.value.copy(

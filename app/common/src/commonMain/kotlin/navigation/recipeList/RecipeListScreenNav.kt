@@ -6,9 +6,7 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.getScreenModel
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
-import navigation.auth.navigation.onNavigate
-import navigation.recipeDetails.RecipeDetailsScreenModel
-import ui.details.RecipeDetailsScreen
+import navigation.onNavigate
 import ui.recipe_list.RecipeListScreen
 
 class RecipeListScreenNav():Screen {

@@ -1,8 +1,6 @@
 package navigation.recipeDetails
 
-import auth.ui.login.LoginEvent
-import auth.ui.login.LoginState
-import auth.ui.login.LoginViewModel
+
 import cafe.adriel.voyager.core.model.StateScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import domain.recipe.details.repository.RecipeDetailsRepository

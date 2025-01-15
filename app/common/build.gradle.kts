@@ -26,15 +26,11 @@ kotlin {
             }
 
             with(ui) {
-                implementation(authUi)
-                implementation(userUi)
                 implementation(recipeListUi)
                 implementation(detailsUi)
             }
 
             with(data) {
-                implementation(authData)
-                implementation(userData)
                 implementation(recipeData)
             }
             with(domain){

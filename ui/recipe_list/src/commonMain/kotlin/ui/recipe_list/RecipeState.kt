@@ -2,11 +2,13 @@ package ui.recipe_list
 
 
 
-import domain.recipe.model.Recipe
+import Recipe
+import domain.recipe.model.Meal
+import domain.recipe.model.RecipeModel
 import utils.viewmodel.State
 
 data class RecipeState(
-    val recipe:State<List<Recipe>> = State(),
+    val meal:State<RecipeModel> = State(),
     val error: String?= null
 ) {
 }

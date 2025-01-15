@@ -59,10 +59,13 @@ suspend fun <T> getDataSuspend(
 
                 setState(State.success(it))
                 onSuccess(it)
+                println("yes")
+                println(it)
             }.onFailure {
                 yield()
                 setState(State.failure(getState().data))
                 onFailure(it)
+                println("no")
             }
     } catch (e: CancellationException) {
         setState(getState().copy(isLoading = false))

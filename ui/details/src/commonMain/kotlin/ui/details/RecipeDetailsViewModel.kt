@@ -25,6 +25,7 @@ class RecipeDetailsViewModel(
         getState = { state.value.recipeDetails },
         setState = { newState ->
             println(newState)
+            println("hhhh")
             state.update {
                 it.copy(
                     recipeDetails = newState

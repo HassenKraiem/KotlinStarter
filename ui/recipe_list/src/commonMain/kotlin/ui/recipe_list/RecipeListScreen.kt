@@ -62,10 +62,10 @@ fun RecipeListScreen(
             ), modifier = Modifier.fillMaxWidth()
         )
     }) { innerPadding ->
-        LaunchedEffect(Unit){
+        LaunchedEffect(query.value){
             onEvent(RecipeListEvent.RecipeList(query.value))
         }
-        if (state.recipe.isLoading) {
+        if (state.meal.isLoading) {
             Box(
                 modifier = Modifier.padding(innerPadding).fillMaxSize(),
                 contentAlignment = Alignment.Center
@@ -73,7 +73,7 @@ fun RecipeListScreen(
                 CircularProgressIndicator()
             }
         }
-        if (state.recipe.isFailure) {
+        if (state.meal.isFailure) {
             Box(
                 modifier = Modifier.padding(innerPadding).fillMaxSize(),
                 contentAlignment = Alignment.Center
@@ -83,8 +83,8 @@ fun RecipeListScreen(
                 )
             }
         }
-        if (state.recipe.isSuccess) {
-            state.recipe.data?.let { list ->
+        if (state.meal.isSuccess) {
+            state.meal.data?.meals?.let { list ->
                 LazyColumn(
                     modifier = Modifier.padding(innerPadding).fillMaxSize()
                 ) {
@@ -95,6 +95,7 @@ fun RecipeListScreen(
                                 vertical = 4.dp
                             )
                                 .clickable {
+                                    onNavigation(AuthNavigation.RecipeDetailsScreen(id = recipe.idMeal))
                                            },
                             shape = RoundedCornerShape(12.dp)
                         ) {

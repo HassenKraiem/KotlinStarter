@@ -1,24 +1,19 @@
 package data.recipe.mapper
 
-import domain.recipe.model.Recipe
-import data.recipe.model.RecipeDto
+import data.recipe.model.MealDTO
+import data.recipe.model.RecipeDTOX
+import domain.recipe.model.Meal
 import domain.recipe.details.model.RecipeDetails
+import domain.recipe.model.RecipeModel
 
-fun List<RecipeDto>.toDomain(): List<Recipe> = map {
-    Recipe(
-        idMeal = it.idMeal ?: "",
-        strArea = it.strArea ?: "",
-        strMeal = it.strMeal ?: "",
-        strTags = it.strTags ?: "",
-        strYoutube = it.strYoutube ?: "",
-        strCategory = it.strCategory ?: "",
-        strInstructions = it.strInstructions ?: "",
-        strMealThumb = it.strMealThumb ?: ""
+fun RecipeDTOX.toDomain(): RecipeModel =
+    RecipeModel(
+        meals = this.meals.map {
+            it.toDomain()
+        }
     )
-}
-
-fun RecipeDto.toDomain(): RecipeDetails =
-    RecipeDetails(
+fun MealDTO.toDomain(): Meal =
+    Meal(
         idMeal = this.idMeal ?: "",
         strArea = this.strArea ?: "",
         strMeal = this.strMeal ?: "",
@@ -27,10 +22,24 @@ fun RecipeDto.toDomain(): RecipeDetails =
         strCategory = this.strCategory ?: "",
         strInstructions = this.strInstructions ?: "",
         strMealThumb = this.strMealThumb ?: "",
-        ingredientsPair =this.getIngredientPairsWithItsMeasure()
     )
 
-fun RecipeDto.getIngredientPairsWithItsMeasure(): List<Pair<String, String>> {
+fun RecipeDTOX.toDomain2(): RecipeDetails {
+    val meal=this.meals.first()
+    return RecipeDetails(
+        idMeal = meal.idMeal ?: "h",
+        strArea = meal.strArea ?: "h",
+        strMeal = meal.strMeal ?: "h",
+        strTags = meal.strTags ?: "h",
+        strYoutube = meal.strYoutube ?: "h",
+        strCategory = meal.strCategory ?: "h",
+        strInstructions = meal.strInstructions ?: "",
+        strMealThumb = meal.strMealThumb ?: "",
+        ingredientsPair = meal.getIngredientPairsWithItsMeasure()
+    )
+}
+
+fun MealDTO.getIngredientPairsWithItsMeasure(): List<Pair<String, String>> {
     val list = mutableListOf<Pair<String, String>>()
     list.add(Pair(strIngredient1.getOrEmpty(), strMeasure1.getOrEmpty()))
     list.add(Pair(strIngredient2.getOrEmpty(), strMeasure2.getOrEmpty()))
